@@ -2,9 +2,21 @@
 require.config({
   paths: {
     jquery: 'vendor/jquery/jquery',
-  }
+    underscore: 'vendor/underscore/underscore',
+    backbone: 'vendor/backbone/backbone',
+  },
+  shim: {
+    'backbone': {
+      deps: ['underscore', 'jquery'],
+      export: 'Backbone',
+    },
+    'underscore': {
+      export: '_',
+    },
+    'jquery': {
+      export: '$',
+    }
+  },
 });
 
-require(['jquery'], function($){
-  $('body').html("PLOP");
-});
+require(['app']);
