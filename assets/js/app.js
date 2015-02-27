@@ -1,15 +1,18 @@
 define(
   // deps:
   [
-    'jquery'
+    'jquery', // jquery est exporter dans le main.js donc pas besoin d'arguments au scope.
+    'underscore',
+    'backbone',
+    'router',
   ],
   // définition du scope.
-  function() {
+  function($, _, Backbone, Router) {
     var initialize = function() {
-      $('body').html("PLOP");
+      $('body').html("require c'est cool.");
+      Router.initialize();
     };
 
-    // on retourne ce qu'on veut utiliser dans d'autres modules.
     return {
       initialize: initialize,
     };
