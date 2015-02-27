@@ -1,15 +1,14 @@
 define(
   // deps:
   [
-    'jquery'
+    'jquery' // jquery est exporter dans le main.js donc pas besoin d'arguments au scope.
   ],
   // définition du scope.
   function() {
     var initialize = function() {
-      $('body').html("PLOP");
+
     };
 
-    // on retourne ce qu'on veut utiliser dans d'autres modules.
     return {
       initialize: initialize,
     };

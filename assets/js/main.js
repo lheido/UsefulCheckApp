@@ -1,4 +1,3 @@
-
 require.config({
   paths: {
     jquery: 'vendor/jquery/jquery',
@@ -19,4 +18,11 @@ require.config({
   },
 });
 
-require(['app']);
+require(
+  [
+    'app'
+  ],
+  function(App) {
+    App.initialize();
+  }
+);
