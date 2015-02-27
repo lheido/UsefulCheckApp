@@ -10,7 +10,7 @@ define(
   function($, _, Backbone, CheckInCollection) {
 
     var CheckInListView = Backbone.View.extend({
-
+      
       render: function() {
         console.log("CheckInView Render");
       }
