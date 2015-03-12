@@ -11,9 +11,6 @@ require.config({
     },
     'underscore': {
       exports: '_',
-    },
-    'jquery': {
-      exports: '$',
     }
   },
 });

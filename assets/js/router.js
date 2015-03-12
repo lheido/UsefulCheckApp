@@ -4,10 +4,11 @@ define(
     'jquery',
     'underscore',
     'backbone',
-    'views/checkin/list'
+    'views/checkin/list',
+    'config'
   ],
   // définition du scope.
-  function($, _, Backbone, CheckInListView) {
+  function($, _, Backbone, CheckInListView, Config) {
 
     var Router = Backbone.Router.extend({
 
@@ -25,7 +26,7 @@ define(
       var routeur = new Router();
 
       $.ajaxPrefilter( function( options, originalOptions, jqXHR ) {
-        options.url = 'http://checkin-api.dev.cap-liberte.com' + options.url;
+        options.url = Config.apiServer + options.url;
         options.crossDomain = {
           crossDomain: true
         };

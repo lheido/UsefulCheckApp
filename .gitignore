@@ -54,3 +54,6 @@ npm-debug.log
 .sass-cache
 *.css.map
 
+
+### congif.js ###
+assets/js/config.js
