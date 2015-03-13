@@ -4,24 +4,28 @@ define(
     'jquery',
     'underscore',
     'backbone',
-    'collections/checkins'
+    'collections/checkins',
+    'text!./../../../templates/checkin/list.html'
   ],
   // définition du scope.
-  function($, _, Backbone, CheckInCollection) {
+  function($, _, Backbone, CheckInCollection, checkinListTemplate) {
     var CheckInListView = Backbone.View.extend({
-
+      el: '#checkinlist',
+      template: _.template(checkinListTemplate),
       render: function() {
-        console.log("CheckInView Render");
+        var self = this;
         var checkInCollection = new CheckInCollection();
         checkInCollection.fetch({
           success: function(checkins) {
-            console.log(checkins.models);
+            self.$el.html(self.template({
+              'checkInList': checkins.models
+            }));
           }
         });
       }
-
+      
     });
-
+    
     return CheckInListView;
   }
 );

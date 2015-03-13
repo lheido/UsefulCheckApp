@@ -9,7 +9,6 @@ define(
   // définition du scope.
   function($, _, Backbone, Router) {
     var initialize = function() {
-      $('body').html("require c'est cool.");
       Router.initialize();
     };
 

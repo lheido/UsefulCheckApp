@@ -2,7 +2,8 @@
 Check In like app - LPSMIN M28 - Réalisation application web mobile.
 
 
-# config.js
+## config.js
+
 ```
 define(
   [],

@@ -34,6 +34,7 @@ define(
 
       routeur.on('route:home', function(){
         var checkInListView = new CheckInListView();
+        console.log(checkInListView.el);
         checkInListView.render();
       });
 
