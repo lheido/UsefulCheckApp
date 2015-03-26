@@ -14,6 +14,7 @@ require.config({
       exports: '_',
     }
   },
+  urlArgs: "bust=" + (new Date()).getTime(),
 });
 
 require(

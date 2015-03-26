@@ -6,17 +6,19 @@ define(
     'backbone',
     'views/checkin/list',
     'views/checkin/details',
+    'views/checkin/add',
     'config'
   ],
   // définition du scope.
-  function($, _, Backbone, CheckInListView, CheckInDetailsView, Config) {
+  function($, _, Backbone, CheckInListView, CheckInDetailsView, CheckInAddView, Config) {
     
     var Router = Backbone.Router.extend({
       routes: {
         "":                      "home",
         "hello":                 "hello",
         "hello/:name":           "hello",
-        "checkin/:id_checkin":   "checkin"
+        "checkin/:id_checkin":   "checkin",
+        "add":                   "add",
         // "search/:query":        "search",
         // "search/:query/p:page": "search",
       }
@@ -45,6 +47,11 @@ define(
         checkInDetailsView.render({
           id: id_checkin
         });
+      });
+      
+      routeur.on('route:add', function(){
+        var checkInAddView = new CheckInAddView();
+        checkInAddView.render();
       });
       
       Backbone.history.start();
