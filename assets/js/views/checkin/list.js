@@ -10,13 +10,14 @@ define(
   // définition du scope.
   function($, _, Backbone, CheckInCollection, checkinListTemplate) {
     var CheckInListView = Backbone.View.extend({
-      el: '#checkinlist',
+      el: '#content',
       template: _.template(checkinListTemplate),
       render: function() {
         var self = this;
         var checkInCollection = new CheckInCollection();
         checkInCollection.fetch({
           success: function(checkins) {
+            console.log(checkins);
             self.$el.html(self.template({
               'checkInList': checkins.models
             }));

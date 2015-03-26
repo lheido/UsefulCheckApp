@@ -4,7 +4,7 @@
 <ul>
   <% _.each(checkInList, function(checkin){ %>
     <li>
-      checkin
+      checkin <%= checkin.get('id') %>
     </li>
   <% }); %>
 </ul>

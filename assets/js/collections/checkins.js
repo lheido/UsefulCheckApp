@@ -5,10 +5,10 @@ define(
     'backbone',
   ],
   // définition du scope.
-  function(_, Backbone) {
+  function(_, Backbone, CheckInModel) {
 
     var CheckInCollection = Backbone.Collection.extend({
-      url: "/checkin"
+      url: "/checkin",
     });
 
     return CheckInCollection;
