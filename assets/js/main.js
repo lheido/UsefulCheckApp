@@ -4,7 +4,6 @@ require.config({
     underscore: 'vendor/underscore/underscore',
     backbone: 'vendor/backbone/backbone',
     text: 'vendor/require/text',
-    async: 'vendor/requirejs-plugins/src/async',
   },
   shim: {
     'backbone': {

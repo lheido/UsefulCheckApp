@@ -8,7 +8,7 @@ define(
     'text!./../../../templates/checkin/details.html'
   ],
   // définition du scope.
-  function($, _, Backbone, googleApi, CheckInModel, checkinDetailsTemplate) {
+  function($, _, Backbone, CheckInModel, checkinDetailsTemplate) {
     var CheckInDetailsView = Backbone.View.extend({
       el: '#content',
       template: _.template(checkinDetailsTemplate),
