@@ -14,16 +14,27 @@ define(
       template: _.template(checkinAddTemplate),
       render: function(options) {
         var self = this;
-        /*var checkInModel = new CheckInModel({id: options.id});
-        checkInModel.fetch({
-          success: function(checkin) {
-            self.$el.html(self.template({
-              'checkin': checkin
-            }));
-          }
-        });*/
         self.$el.html(self.template());
+      },
+      events: {
+        "submit #add_checkin": "addCheckin",
+      },
+      
+      addCheckin: function(evt) {
+        evt.preventDefault();
+        
+        var serializeArray = $(evt.currentTarget).serializeArray();
+        var checkin = new CheckInModel();
+        
+        $.each(serializeArray, function(index, o){
+          checkin.set(o.name, o.value);
+        });
+        
+        checkin.save();
+        
+        return false;
       }
+      
     });
     return CheckInAddView;
   }

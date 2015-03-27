@@ -3,7 +3,8 @@ require.config({
     jquery: 'vendor/jquery/jquery',
     underscore: 'vendor/underscore/underscore',
     backbone: 'vendor/backbone/backbone',
-    text: 'vendor/require/text'
+    text: 'vendor/require/text',
+    async: 'vendor/requirejs-plugins/src/async',
   },
   shim: {
     'backbone': {

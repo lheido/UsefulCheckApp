@@ -8,7 +8,7 @@ define(
     'text!./../../../templates/checkin/details.html'
   ],
   // définition du scope.
-  function($, _, Backbone, CheckInModel, checkinDetailsTemplate) {
+  function($, _, Backbone, googleApi, CheckInModel, checkinDetailsTemplate) {
     var CheckInDetailsView = Backbone.View.extend({
       el: '#content',
       template: _.template(checkinDetailsTemplate),
@@ -17,9 +17,11 @@ define(
         var checkInModel = new CheckInModel({id: options.id});
         checkInModel.fetch({
           success: function(checkin) {
+            
             self.$el.html(self.template({
               'checkin': checkin
             }));
+            
           }
         });
       }

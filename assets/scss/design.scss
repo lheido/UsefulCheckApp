@@ -12,6 +12,22 @@ header[data-role="header"] {
     margin-left: 16px;
     margin-bottom: 16px;
     display: block;
+    
+    a {
+      text-decoration: none;
+      color: $text-color;
+    }
+  }
+  
+  a[data-role="add"] {
+    float: right;
+    display: block;
+    width: 48px;
+    height: 48px;
+    position: relative;
+    top: 12px;
+    right: 16px;
+    background-image: url(/assets/ambiance/img/actions/add-48.png);
   }
 }
 
@@ -28,5 +44,39 @@ header[data-role="header"] {
   
   ul {
     margin-top: 30px;
+    
+    li {
+      
+      a {
+        
+        &:after {
+          content: "";
+          background: transparent url(/assets/ambiance/img/chevron@27.png) no-repeat 0.5rem 0.5rem;
+          background-size: 40% 75%;
+          position: absolute;
+          width: 2rem;
+          height: 2rem;
+          top: 50%;
+          right: 0;
+          margin-top: -1rem;
+          z-index: 0;
+        }
+      }
+    }
+  }
+  
+  form {
+    width: 100%;
+    overflow: hidden;
+    
+    input {
+      width: -moz-available;
+      margin: 16px;
+      display: block;
+    } 
+  }
+  
+  #map-canvas {
+    height: 200px;
   }
 }
