@@ -1,8 +1,10 @@
 @import "../ambiance/css/sass/default.scss";
 
+$header-bg-color: #EDEDF0;
+
 header[data-role="header"] {
   position: fixed;
-  background-color: #EDEDF0;
+  background-color: $header-bg-color;
   opcaity: 1;
   z-index: 100;
   height: 84px;
@@ -29,6 +31,40 @@ header[data-role="header"] {
     right: 16px;
     background-image: url(/assets/ambiance/img/actions/add-48.png);
   }
+  
+  #popover {
+    position: fixed;
+    width: 75%;
+    right: 0;
+    background-color: white;
+    @include box_shadow (0 0 10px rgba(0, 0, 0, 0.5));
+    border-radius: 10px;
+    
+    &::before {
+      position: absolute;
+      right: 20px;
+      width: 0;
+      height: 0;
+      content: '';
+      top: -17px;
+      margin-left: -18px;
+      background: transparent url(/assets/ambiance/img/UpArrow@18.png) no-repeat 0.5rem 0.5rem;
+      background-size: 50% 50%;
+      width: 37px;
+      height: 18px;
+    }
+    
+    form {
+      width: 100%;
+      overflow: hidden;
+      
+      input {
+        width: -moz-available;
+        margin: 16px;
+        display: block;
+      } 
+    }
+  }
 }
 
 #content {
@@ -39,7 +75,7 @@ header[data-role="header"] {
     position: fixed;
     width: 100%;
     z-index: 90;
-    background-color: #EDEDF0;
+    background-color: $header-bg-color;
   }
   
   ul {
@@ -63,17 +99,6 @@ header[data-role="header"] {
         }
       }
     }
-  }
-  
-  form {
-    width: 100%;
-    overflow: hidden;
-    
-    input {
-      width: -moz-available;
-      margin: 16px;
-      display: block;
-    } 
   }
   
   #map-canvas {

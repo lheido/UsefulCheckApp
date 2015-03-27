@@ -18,7 +18,7 @@ define(
         "hello":                 "hello",
         "hello/:name":           "hello",
         "checkin/:id_checkin":   "checkin",
-        "add":                   "add",
+        //"add":                   "add",
         // "search/:query":        "search",
         // "search/:query/p:page": "search",
       }

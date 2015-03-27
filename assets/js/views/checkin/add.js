@@ -10,7 +10,7 @@ define(
   // définition du scope.
   function($, _, Backbone, CheckInModel, checkinAddTemplate) {
     var CheckInAddView = Backbone.View.extend({
-      el: '#content',
+      el: '#popover',
       template: _.template(checkinAddTemplate),
       render: function(options) {
         var self = this;
@@ -30,7 +30,11 @@ define(
           checkin.set(o.name, o.value);
         });
         
-        checkin.save();
+        checkin.save(null, {
+          success: function(model, response, options){
+            $('#popover').toggle().html('');
+          },
+        });
         
         return false;
       }

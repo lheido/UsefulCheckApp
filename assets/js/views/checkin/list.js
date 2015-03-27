@@ -17,16 +17,13 @@ define(
         var checkInCollection = new CheckInCollection();
         checkInCollection.fetch({
           success: function(checkins) {
-            console.log(checkins);
             self.$el.html(self.template({
               'checkInList': checkins.models
             }));
           }
         });
       }
-      
     });
-    
     return CheckInListView;
   }
 );
