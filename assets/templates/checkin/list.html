@@ -1,10 +1,10 @@
-<h2>CheckinList</h2>
-
-
-<ul>
-  <% _.each(checkInList, function(checkin){ %>
-    <li>
-      checkin <%= checkin.get('id') %>
-    </li>
-  <% }); %>
-</ul>
+<div data-role="list">
+  <header>CheckinList</header>
+  <ul>
+    <% _.each(checkInList, function(checkin){ %>
+      <li>
+        checkin <%= checkin.get('id') %>
+      </li>
+    <% }); %>
+  </ul>  
+</div>
