@@ -4,6 +4,7 @@ require.config({
     underscore: 'vendor/underscore/underscore',
     backbone: 'vendor/backbone/backbone',
     text: 'vendor/require/text',
+    leaflet: 'vendor/leaflet/leaflet-src',
   },
   shim: {
     'backbone': {
@@ -12,7 +13,7 @@ require.config({
     },
     'underscore': {
       exports: '_',
-    }
+    },
   },
   urlArgs: "bust=" + (new Date()).getTime(),
 });
