@@ -22,8 +22,20 @@ define(
             self.$el.html(self.template({
               'checkin': checkin
             }));
-            var map = L.map('map-canvas').setView([checkin.attributes.lat, checkin.attributes.lng], 4);
-            L.marker([checkin.attributes.lat, checkin.attributes.lng]).addTo(map);
+            var $user = $(".user").detach();
+            console.log($user);
+            var map = L.map('map-canvas').setView(
+              [checkin.attributes.lat, checkin.attributes.lng], 14);
+            var popup = L.popup(
+              {
+                closeOnClick: false,
+                closeButton: false,
+                className: 'user'
+              }
+            );
+            popup.setLatLng([checkin.attributes.lat, checkin.attributes.lng]);
+            popup.setContent($user.html());
+            popup.openOn(map);
             L.tileLayer(
               'http://{s}.tile.osm.org/{z}/{x}/{y}.png', 
               {

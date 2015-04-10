@@ -1,8 +1,9 @@
-<h2>Checkin <%= checkin.attributes.id %></h2>
+<!--<h2>Checkin <%= checkin.attributes.id %></h2>-->
 
 
-<%= checkin.attributes.id %><br/>
-<%= checkin.attributes.lat %><br/>
-<%= checkin.attributes.lng %><br/>
+<div class='user'>
+  <img src="<%= checkin.get('user').picture %>" alt="">
+  <h2><%= checkin.get('user').name %></h2>
+</div>
 
 <div id="map-canvas"></div>

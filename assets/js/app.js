@@ -10,22 +10,32 @@ define(
   // définition du scope.
   function($, _, Backbone, Router, CheckInAddView) {
     var initialize = function() {
-      Router.initialize();
       
       var $popover = $('#popover');
-      $popover.toggle();
+      var $popover_hack = $('#popover-wrapper');
+      
       
       $("#add_checkin_button").on('click', function(evt) {
         evt.preventDefault();
-        $popover.toggle();
-        if ($popover.is(':visible')) {
-          var checkInAddView = new CheckInAddView();
-          checkInAddView.render();
-        } else {
-          $popover.html('');
-        }
+        $popover_hack.css('display', 'block');
+        var checkInAddView = new CheckInAddView();
+        checkInAddView.render();
         return false;
       });
+      
+      $popover_hack.on('click', function(evt){
+        evt.preventDefault();
+        $popover_hack.css('display', 'none');
+        return false;
+      });
+      
+      $popover.on('click', function(evt){
+        console.log('popover clicked');
+        evt.preventDefault();
+        return false;
+      });
+      
+      Router.initialize();
       
     };
 

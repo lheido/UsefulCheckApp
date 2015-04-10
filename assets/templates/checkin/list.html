@@ -3,7 +3,7 @@
   <ul>
     <% _.each(checkInList, function(checkin){ %>
       <li>
-        <a href="#checkin/<%= checkin.get('id') %>">checkin <%= checkin.get('id') %></a>
+        <a href="#checkin/<%= checkin.get('id') %>"><img src="<%= checkin.get('user').picture %>">checkin <%= checkin.get('id') %> par <%= checkin.get('user').name %></%></a>
       </li>
     <% }); %>
   </ul>  
