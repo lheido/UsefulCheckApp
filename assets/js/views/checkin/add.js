@@ -31,7 +31,7 @@ define(
       },
       
       onGetCurrentPosition: function(position) {
-        $('header h1 a').css('color', 'res');
+        $('header h1 a').css('color', 'red');
         var lat = position.coords.latitude;
         var lng = position.coords.longitude;
         
