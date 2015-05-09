@@ -30,7 +30,7 @@ header[data-role="header"] {
     position: relative;
     top: 12px;
     right: 16px;
-    background-image: url(/assets/ambiance/img/actions/add-48.png);
+    background-image: url(../ambiance/img/actions/add-48.png);
   }
   
   #popover-wrapper {
@@ -60,7 +60,7 @@ header[data-role="header"] {
         content: '';
         top: -17px;
         margin-left: -18px;
-        background: transparent url(/assets/ambiance/img/UpArrow@18.png) no-repeat 0.5rem 0.5rem;
+        background: transparent url(../ambiance/img/UpArrow@18.png) no-repeat 0.5rem 0.5rem;
         background-size: 50% 50%;
         width: 37px;
         height: 18px;
@@ -117,7 +117,7 @@ header[data-role="header"] {
         
         &:after {
           content: "";
-          background: transparent url(/assets/ambiance/img/chevron@27.png) no-repeat 0.5rem 0.5rem;
+          background: transparent url(../ambiance/img/chevron@27.png) no-repeat 0.5rem 0.5rem;
           background-size: 40% 75%;
           position: absolute;
           width: 2rem;
