@@ -14,7 +14,6 @@ define(
       el: '#popover',
       template: _.template(checkinAddTemplate),
       render: function(options) {
-        var self = this;
         
         if(navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(this.onGetCurrentPosition)
@@ -23,7 +22,7 @@ define(
           var $lng_input = $('input[name="lng"]');
         }
         
-        self.$el.html(self.template());
+        this.$el.html(this.template());
         
         $("#add_checkin_submit").on('click', function(evt){
           $("#add_checkin_form").submit();
@@ -31,7 +30,6 @@ define(
       },
       
       onGetCurrentPosition: function(position) {
-        $('header h1 a').css('color', 'red');
         var lat = position.coords.latitude;
         var lng = position.coords.longitude;
         

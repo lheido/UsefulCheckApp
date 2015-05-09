@@ -12,20 +12,20 @@ define(
     var initialize = function() {
       
       var $popover = $('#popover');
-      var $popover_hack = $('#popover-wrapper');
+      var $popover_wrapper = $('#popover-wrapper');
       
       
       $("#add_checkin_button").on('click', function(evt) {
         evt.preventDefault();
-        $popover_hack.css('display', 'block');
+        $popover_wrapper.css('display', 'block');
         var checkInAddView = new CheckInAddView();
         checkInAddView.render();
         return false;
       });
       
-      $popover_hack.on('click', function(evt){
+      $popover_wrapper.on('click', function(evt){
         evt.preventDefault();
-        $popover_hack.css('display', 'none');
+        $popover_wrapper.css('display', 'none');
         return false;
       });
       
