@@ -30,7 +30,6 @@ define(
       });
       
       $popover.on('click', function(evt){
-        console.log('popover clicked');
         evt.preventDefault();
         return false;
       });
