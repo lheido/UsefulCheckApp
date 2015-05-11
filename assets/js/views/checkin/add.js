@@ -6,10 +6,11 @@ define(
     'backbone',
     'leaflet',
     'models/checkin',
+    'views/checkin/list',
     'text!./../../../templates/checkin/add.html'
   ],
   // définition du scope.
-  function($, _, Backbone, L, CheckInModel, checkinAddTemplate) {
+  function($, _, Backbone, L, CheckInModel, CheckInListView, checkinAddTemplate) {
     var CheckInAddView = Backbone.View.extend({
       el: '#popover',
       template: _.template(checkinAddTemplate),
@@ -24,7 +25,11 @@ define(
         
         this.$el.html(this.template());
         
-        $("#add_checkin_submit").on('click', function(evt){
+        var $submit = $("#add_checkin_submit");
+        
+        $submit.attr('disabled', 'disabled');
+        
+        $submit.on('click', function(evt){
           $("#add_checkin_form").submit();
         });
       },
@@ -47,6 +52,8 @@ define(
         
         $lat_input.val(lat);
         $lng_input.val(lng);
+        
+        $("#add_checkin_submit").removeAttr('disabled');
       },
       
       events: {
@@ -55,7 +62,7 @@ define(
       
       addCheckin: function(evt) {
         evt.preventDefault();
-        
+        var self = this;
         var serializeArray = $(evt.currentTarget).serializeArray();
         var checkin = new CheckInModel();
         $.each(serializeArray, function(index, o){
@@ -65,6 +72,10 @@ define(
         checkin.save(null, {
           success: function(model, response, options){
             $('#popover-wrapper').css('display', 'none');
+            if (Backbone.history.getFragment().indexOf('checkin/') == -1) {
+              var listView = new CheckInListView();
+              listView.render();
+            }
           },
           error: function(model, response, options){
             console.log(response);

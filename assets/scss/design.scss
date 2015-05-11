@@ -89,6 +89,10 @@ header[data-role="header"] {
           &[type='text'] {
             display: none;
           }
+          &[type='submit']:disabled {
+            background-color: #AAAAAA;
+            border-color: #AAAAAA;
+          }
         } 
       }
     }  
